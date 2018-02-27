@@ -1,0 +1,20 @@
+'1-->isinstance'
+class Animal(object):
+	def run(self):
+		print('Animal is running...')
+
+class Dog(Animal):
+	def run(self):
+		print('Dog is running...')
+
+class Timer(object):
+	def run(self):
+		print('Start...')
+		
+d=Dog()
+t=Timer()
+
+print(isinstance(d,Dog))
+print(isinstance(d,Animal))
+print(isinstance(d,Timer))
+print(isinstance(d,(Dog,Timer)))
