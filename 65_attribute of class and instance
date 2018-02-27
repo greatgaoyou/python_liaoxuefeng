@@ -1,0 +1,27 @@
+'1-->attribute of class or instance'
+
+class Student(object):
+	name='student'
+
+a=Student()
+print(a.name)
+
+a.name='Jin'
+print(a.name)
+
+del a.name
+print(a.name)
+
+
+'2-->exercise'
+class Student(object):
+	count=0
+	
+	def __init__(self,name):
+		self.__name=name
+		Student.count=Student.count+1
+		
+a=Student('Zhao')
+b=Student('Qian')
+
+print(Student.count)
