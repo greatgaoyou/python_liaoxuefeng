@@ -1,0 +1,18 @@
+class Animal(object):
+	def breath(self):
+		print('Breathing...')
+		
+class RunnableMixIn(object):
+	def run(self):
+		print('running...')
+
+class flyableMixIn(object):
+	def fly(self):
+		print('flying...')
+		
+class Dog(Animal,RunnableMixIn):
+	pass
+	
+d=Dog()
+d.breath()
+d.run()
