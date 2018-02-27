@@ -1,0 +1,61 @@
+'1-->继承'
+class Animal(object):
+	def run(self):
+		print('Animal is running...')
+
+class Dog(Animal):
+	pass
+	
+class Cat(Animal):
+	pass
+	
+d=Dog()
+d.run()
+
+c=Cat()
+c.run()
+
+
+'2-->多态'
+class Animal(object):
+	def run(self):
+		print('Animal is running...')
+
+class Dog(Animal):
+	def run(self):
+		print('Dog is running...')
+	
+class Cat(Animal):
+	def run(self):
+		print('Cat is running...')
+	
+d=Dog()
+d.run()
+
+c=Cat()
+c.run()
+
+'3-->多态的好处'
+class Animal(object):
+	def run(self):
+		print('Animal is running...')
+
+def run_twice(Animal):
+	Animal.run()
+	Animal.run()
+	
+run_twice(Animal())
+
+class Dog(Animal):
+	def run(self):
+		print('Dog is running...')
+
+run_twice(Dog())
+
+'4-->动态Vs静态(Java)'
+class Timer(object):
+	def run(self):
+		print('Start...')
+		
+run_twice(Timer())
+
