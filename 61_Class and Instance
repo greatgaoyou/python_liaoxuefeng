@@ -1,0 +1,40 @@
+'1-->Class and Instance'
+
+class Student(object):
+  pass
+  
+a=Student()
+
+print(a)
+print(Student)
+
+
+'2-->Attribute'
+a.name='Jin'
+a.score=85
+print(a.name,a.score)
+
+
+'3-->__init__'
+class Student(object):
+	def __init__(self,name,age):
+		self.name=name
+		self.age=age
+		
+a=Student('Jin',8)
+print(a.name,a.age)
+
+
+'4-->encapsulation'
+class Student(object):
+	def __init__(self,name,age):
+		self.name=name
+		self.age=age
+	
+	def print_age(self):
+		print('name:%s, age:%s'%(self.name,self.age))
+
+a=Student('Jin',8)
+a.print_age()
+
+'5-->encapsulation+'
