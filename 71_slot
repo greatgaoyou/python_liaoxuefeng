@@ -1,0 +1,38 @@
+'1-->__init__'
+class Student(object):
+	def __init__(self,name,age):
+		self.name=name
+		self.age=age
+		
+a=Student('Jin',8)
+a.score=100
+print(a.name,a.age,a.score)
+
+
+'2-->__slots__'
+class Student(object):
+	__slots__=('name','age')
+
+a=Student()
+a.name='Jin'
+a.age=8
+a.score=85
+
+'3-->slots不自动继承'
+class GratuatedStudent(Student):
+	pass
+	
+b=GratuatedStudent()
+b.name='zhao'
+b.score=90
+
+print(b.name,b.score)
+
+'4-->子类使用后继承'
+class GratuatedStudent(Student):
+	__slots__=('score')
+	
+b=GratuatedStudent()
+b.name='zhao'
+b.score=90
+b.weight=50
