@@ -1,0 +1,78 @@
+'0-->不使用访问限制'
+class Student(object):
+	def __init__(self,name,score):
+		self.name=name
+		self.score=score
+    
+	def print_score(self):
+		print('name:%s, age:%s'%(self.name,self.score))
+    
+a=Student('Jin',85)
+a.print_score()
+
+a.score=90
+a.print_score()
+
+'1-->使用访问限制'
+class Student(object):
+	def __init__(self,name,score):
+		self.__name=name
+		self.__score=score
+    
+	def print_score(self):
+		print('name:%s, age:%s'%(self.__name,self.__score))
+    
+a=Student('Jin',85)
+a.print_score()
+
+a.score=90
+a.print_score()
+
+'2-->访问限制后取值和赋值'
+class Student(object):
+	def __init__(self,name,score):
+		self.__name=name
+		self.__score=score
+    
+	def print_score(self):
+		print('name:%s, age:%s'%(self.__name,self.__score))
+		
+	def get_score(self):
+		return self.__score
+		
+	def set_score(self,value):
+		self.__score=value
+
+a=Student('Jin',85)
+a.print_score()
+
+a.set_score(90)
+a.print_score()
+
+'3-->访问限制的误区'
+class Student(object):
+	def __init__(self,name,score):
+		self.__name=name
+		self.__score=score
+			
+a=Student('Jin',85)
+
+a.__score=100
+print(a.__score)
+
+
+'4-->访问限制并不是完全限制'
+class Student(object):
+	def __init__(self,name,score):
+		self.__name=name
+		self.__score=score
+			
+a=Student('Jin',85)
+
+# print(a.__score)
+print(a._Student__score)
+
+
+ 
+
+ 
