@@ -1,0 +1,100 @@
+'1-->直接赋值'
+class Student(object):
+	def __init__(self,name,score):
+		self.name=name
+		self.score=score
+	
+	def print_score(self):
+		print('%s,%s'%(self.name,self.score))
+
+a=Student('Jin',85)
+a.print_score()
+a.score=100
+a.print_score()
+
+
+'2-->访问限制'
+class Student(object):
+	def __init__(self,name,score):
+		self.__name=name
+		self.__score=score
+	
+	def print_score(self):
+		print('%s,%s'%(self.__name,self.__score))
+		
+	def set_score(self,value):
+		if not isinstance(value,int):
+			raise ValueError('score must be an integer!')
+		if value >100 or value <0:
+			raise ValueError('score must between 0~100!')
+		self.__score=value
+
+a=Student('Jin',85)
+a.print_score()
+
+a.set_score(99)
+a.print_score()
+
+
+'3-->@property'
+class Student(object):
+	def __init__(self,name,score):
+		self.__name=name
+		self.__score=score
+	
+	def print_score(self):
+		print('%s,%s'%(self.__name,self.__score))
+	
+	@property
+	def score(self):
+		return self.__score
+		
+	@score.setter
+	def score(self,value):
+		if not isinstance(value,int):
+			raise ValueError('score must be an integer!')
+		if value >100 or value <0:
+			raise ValueError('score must between 0~100!')
+		self.__score=value		
+
+a=Student('Jin',85)
+a.print_score()
+
+a.score=99
+a.print_score()
+
+
+'4-->exercise'
+class Screen(object):
+	def __init__(self,width,length):
+		self._width=width
+		self._length=length
+		
+	@property
+	def width(self):
+		return self._width
+		
+	@width.setter
+	def width(self,value):
+		self._width=width
+		
+	@property
+	def length(self):
+		return self._length
+		
+	@length.setter
+	def length(self,value):
+		self._length=length
+		
+	@property
+	def resolution(self):
+		return self._width*self._length
+		
+apple=Screen(100,22)
+print(apple.resolution)
+
+apple.width=50#实际转化为apple.set_width(50)
+print(apple.resolution)#实际转化为apple.get_resolution()
+
+apple.length=11
+print(apple.resolution)
