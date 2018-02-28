@@ -10,5 +10,5 @@ class Student(object):
 a=Student('Jin')
 a()
 
-'callable'
+'2-->callable'
 callable(max)
