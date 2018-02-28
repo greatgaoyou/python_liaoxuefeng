@@ -1,0 +1,26 @@
+'1-->枚举类'
+
+from enum import Enum
+M=Enum('Month',('Jan','Feb','Mar','Apr','May','Jun','July','Aug','Sep','Oct','Nov','Dec'))
+
+for name, member in M.__members__.items():
+	print(name,'-->',member,',',member.value)
+  
+  
+  
+'2-->'
+
+from enum import Enum,unique
+
+@unique#检查重复值
+class Weekday(Enum):
+	Sun=0
+	Mon=1
+	Tue=2
+	Wed=3
+	Thu=4
+	Fri=5
+	Sat=6
+	
+print(Weekday(1))
+print(Weekday.Tue.value)
