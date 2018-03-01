@@ -1,0 +1,14 @@
+
+r=10/0
+print('result:',r)
+
+'1-->try'
+try:
+	print('try..')
+	r=10/0
+	print('result:',r)
+except ZeroDivisionError as e:#Error也是类，可以继承
+	print('except:',e)
+finally:
+	print('finally...')
+print('END')
