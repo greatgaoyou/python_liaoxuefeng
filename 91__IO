@@ -1,0 +1,31 @@
+'1-->IO'
+f=open('/users/text/hello.txt','r')
+
+print(f.read())
+f.close()
+
+'2-->try'
+try:
+    f = open('/path/to/file', 'r')
+    print(f.read())
+finally:
+    if f:
+        f.close()
+		
+'3-->with'
+with open('/users/text/hello.txt', 'r') as f:
+	print(f.read())
+	
+'4-->readlines()'
+with open('/users/text/hello.txt', 'r') as f:
+	for line in f.readlines():
+		print(line.strip())
+
+'6-->write'
+with open('/users/text/han.txt', 'w',encoding='gbk') as f:
+		f.write('\n hello,qian!')
+
+
+'7-->write'
+with open('/users/text/han.txt', 'a') as f:
+		f.write('\n hello,qian!')
