@@ -1,0 +1,16 @@
+'1-->序列化'
+
+import pickle
+
+d=dict(name='Jin', age=25, score=88)
+pickle.dumps(d)
+
+f=open('test.txt','wb')
+pickle.dump(d,f)
+f.close()
+
+'2-->反序列化'
+f=open('test.txt','rb')
+d=pickle.load(f)
+f.close()
+print(d)
