@@ -1,0 +1,12 @@
+'1-->文件夹'
+
+
+import os
+os.path.abspath('.')#查看地址
+os.path.join('c:\\users\code','test-123')#展示地址
+os.mkdir('c:\\users\\code\\test-123')#创建文件夹
+os.rmdir('c:\\users\\code\\test-123')#删除文件夹
+
+'2-->文件'
+os.rename('test.txt','test.py')#重命名
+os.remove('test.py')#删除
